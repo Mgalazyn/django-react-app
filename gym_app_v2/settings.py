@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'frontend',
     'rest_framework',
     'corsheaders',
-    'webpack_loader',
 ]
 
 MIDDLEWARE = [
