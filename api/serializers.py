@@ -1,11 +1,20 @@
 from rest_framework import serializers
-from .models import Exercise, Plan, Client, Diet
+from .models import Exercise, Plan, Client, Diet, Video
+
+
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = ['id', 'video_file']
 
 
 class ExerciseSerliazer(serializers.ModelSerializer):
+    #editable videos in exercise
+    videos = VideoSerializer(many=True)
+
     class Meta:
         model = Exercise
-        fields = ['name', 'sets', 'reps', 'weight']
+        fields = ['id', 'name', 'sets', 'reps', 'weight', 'videos']
 
 
 class PlanSerializer(serializers.ModelSerializer):
@@ -30,4 +39,6 @@ class DietSerializer(serializers.ModelSerializer):
     class Meta:
         model = Diet
         fields = ['client', 'trainer', 'name', 'kcal', 'proteins', 'fats', 'carbs']
+
+
 

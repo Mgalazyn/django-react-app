@@ -7,17 +7,24 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_trainer = models.BooleanField(default=False)
+    email = models.EmailField(blank=True, null=True)
     plans = models.ManyToManyField('Client', through='Plan', related_name='trainer_plans')
     diets = models.ManyToManyField('Client', through='Diet', related_name='trainer_diets')
 
     def __str__(self) -> str:
         return self.user.username
+    
 
 class Exercise(models.Model):
     name = models.CharField(max_length=255)
     sets = models.PositiveIntegerField()
     reps = models.PositiveIntegerField()
     weight = models.CharField(max_length=255)
+
+
+class Video(models.Model):
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='videos')
+    video_file = models.FileField(upload_to='api/static/videos/')
 
 
 class Client(models.Model):
