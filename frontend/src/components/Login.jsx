@@ -4,43 +4,29 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleInputChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    if (name === "username") {
-      setUsername(value);
-    } else {
-      setPassword(value);
-    }
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(username, password);
+    console.log({ username, password });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Username:
+      <label htmlFor="Username"> Username </label>
         <input
-          type="text"
-          name="username"
           value={username}
-          onChange={handleInputChange}
+          onChange={e => setUsername(e.target.value)}
+          type="username"
+          id="username"
         />
-      </label>
-      <label>
+      <label htmlFor="password"> Password </label>
         Password:
         <input
-          type="password"
-          name="password"
           value={password}
-          onChange={handleInputChange}
+          onChange={e => setPassword(e.target.value)}
+          type="password"
+          id="password"
         />
-      </label>
+        <button type="submit">Submit </button>
     </form>
   );
 };
