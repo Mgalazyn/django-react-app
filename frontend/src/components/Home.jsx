@@ -1,30 +1,46 @@
 import React from "react";
 import Boxes from "./Boxes";
 import Price from "./Price";
+import Workout from "./Workout";
+import left2Img from "./images/left.jpg";
+import mainImg from "./images/main.jpg";
+import leftImg from "./images/left1.jpg";
+import test2Img from "./images/test2.jpg";
+import test1Img from "./images/test1.jpg";
+import aboutImg from "./images/about.png";
+import workoutImg from "./images/workout.png";
+import dietImg from "./images/diet.png";
+import price1Img from "./images/price1.png";
+import price2Img from "./images/price2.png";
+import price3Img from "./images/price3.png";
+import workoutbackgroundImg from "./images/withoutbackground-work.png";
+import shapeImg from "./images/shape.png";
 
-const left2 = new URL("./images/left.jpg", import.meta.url)
-const main = new URL("./images/main.jpg", import.meta.url)
-const left = new URL("./images/left1.jpg", import.meta.url)
-const test2= new URL("./images/test2.jpg", import.meta.url)
-const test1 = new URL("./images/test1.jpg", import.meta.url)
-
-export default function Home() {
+function Home() {
     return (
         <>  
-        <section>
-            <div id="photos" className="photos">
-                <div className="hero">
-                    <div className="hero-images">
-                        <img src={left} alt='left' />  
-                        <img src={left2} alt='left2'/>
-                        <img src={main} alt ='main'/>         
-                        <img src={test1} alt='test1' />
-                        <img src={test2} alt='test2' />  
-                    </div>
+        <div id="photos" className="photos">
+            <div className="hero">
+                <div className="hero-images">
+                    <img src={leftImg} alt='left' />  
+                    <img src={left2Img} alt='left2'/>
+                    <img src={mainImg} alt ='main'/>         
+                    <img src={test1Img} alt='test1' />
+                    <img src={test2Img} alt='test2' />  
                 </div>
             </div>
-        </section>
-
+        </div>
+        <div className="boxes">
+            <Boxes about={aboutImg} workout={workoutImg} diet={dietImg} />
+        </div>
+        <div className="workout">
+            <Workout shape={shapeImg} workoutbackground={workoutbackgroundImg} /> 
+        </div>
+        <div className="pricing">
+            <Price price1={price1Img} price2={price2Img} price3={price3Img} />
+        </div>
         </>
     );
 }
+
+export default Home;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 
 /* NAV - BAR */
 * {
@@ -45,7 +46,6 @@ body {
 /* HOME PAGE */
 
 .photos {
-    position: relative;
     display: block;
     justify-content: center;
     align-items: center;
@@ -65,15 +65,16 @@ body {
 
 /* BOXES */ 
 
+.boxes {
+    position: relative;
+}
+
 .over-boxes {
-    position: absolute;
     display: flex;
     justify-content: center;
     margin-top: -60px;
     column-gap: 60px;
     left: 50%;
-    transform: translateX(-50%);
-
 }
 
 .about-boxes {
@@ -124,13 +125,21 @@ ul li {
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-right: 40px;
     padding: 10px;
+}
+
+.pricing {
+    display: relative;
+    justify-content: center;
+    margin-top: 200px;
 }
 
 .over-pricing {
     display: flex;
     justify-content: center;
-    margin-top: 400px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .about-pricing {
@@ -179,3 +188,64 @@ img[alt='price'] {
     transform: scale(1.04);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
+
+
+/* Workout */
+
+.workout {
+    position: relative;
+    margin-left: 25%;
+}
+
+.over-workout {
+    height: 400px;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+img[alt='shape'] {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+img[alt='workoutback'] {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+}
+
+.text-block-workout p {
+    font-family: 'Gruppo';
+    color: grey;
+    font-size: 24px;
+}
+
+.text-block-workout h1 {
+    font-family: 'Kanit', sans-serif;
+}
+
+
+.join-button1 {
+    position:relative;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    margin-top: 70px;
+    margin-left: 200px;
+    padding: 12px 18px;
+    background: rgb(255, 68, 68);
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.join-button1:hover {
+    border: 3px dotted #b80000;
+    color: #d80000;
+    background: #fff;
+  }

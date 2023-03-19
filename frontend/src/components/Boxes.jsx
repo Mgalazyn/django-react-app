@@ -1,4 +1,4 @@
-export default function Boxes({about, workout, diet}) {
+function Boxes({about, workout, diet}) {
     return (<div class='over-boxes'>
                   <div className="about-boxes">
                       <img src={about} alt='about' />
@@ -23,3 +23,5 @@ export default function Boxes({about, workout, diet}) {
                   </div>
               </div>);
   }
+
+export default Boxes;
