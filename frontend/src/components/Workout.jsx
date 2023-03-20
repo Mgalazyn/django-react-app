@@ -13,8 +13,10 @@ import WorkoutBackgroundImg from "./images/withoutbackground-work.png";
                     <h1>Take Your Workouts To Another Level </h1>
                     <p>We will help you develop your strenght, stamina and power to maximum size, we will help you
                         become more all-around athelete. 
+                        <p class="nice-border"></p>
                     <div className="button-workout">
                         <a href="/login" class="join-button1">Work in</a>
+                        
                     </div>
                     </p>
             </div>

@@ -133,7 +133,7 @@ ul li {
 .pricing {
     display: relative;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 20px;
 }
 
 .over-pricing {
@@ -195,6 +195,7 @@ img[alt='price'] {
 .workout {
     position: relative;
     margin-left: 25%;
+    
 }
 
 .over-workout {
@@ -231,21 +232,97 @@ img[alt='workoutback'] {
 .join-button1 {
     position:relative;
     color: black;
-    border: none;
     outline: none;
     font-size: 24px;
     margin-top: 70px;
     margin-left: 200px;
-    padding: 12px 18px;
-    background: rgb(255, 68, 68);
-    border-radius: 10px;
+    padding: 20px 50px;
     display: inline-block;
     text-decoration: none;
 }
 
 
-.join-button1:hover {
-    border: 3px dotted #b80000;
-    color: #d80000;
-    background: #fff;
-  }
+.join-button1::after, .join-button1::before {
+    border: 3px solid darkred;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.join-button1:hover::after {
+    transform: translate(-5px, -5px)
+}
+
+.join-button1:hover:before {
+    transform: translate(5px, 5px);
+}
+
+
+.nice-border {
+    color: black;
+}
+
+.nice-border::after, .nice-border::before {
+    border: 3px solid black;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* pricing title */
+
+.pricing-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.pricing-title-about {
+    position: relative;
+}
+
+.pricing-title-about h1 {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 25px;
+    left: 335px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img[alt='pricing-title'] {
+    width: 25%;
+    height: 25%;
+    display: flex;
+    margin-left: 300px;
+}
+
+.text-block-title p {
+    display: flex;
+    font-family: 'Gruppo';
+    color: grey;
+    font-size: 24px;
+    display: table;
+    width: 800px;
+    text-align:center; 
+    vertical-align: middle;
+    display: table-cell;   
+}
+
+.text-block-title h2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 32px;
+}
+
