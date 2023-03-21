@@ -3,6 +3,8 @@ import Boxes from "./Boxes";
 import Price from "./Price";
 import Workout from "./Workout";
 import PricingTitle from "./Pricing-title";
+import Footer from "./Footer";
+
 import left2Img from "./images/left.jpg";
 import mainImg from "./images/main.jpg";
 import leftImg from "./images/left1.jpg";
@@ -43,6 +45,9 @@ function Home() {
         </div>
         <div className="pricing">
             <Price price1={price1Img} price2={price2Img} price3={price3Img} />
+        </div>
+        <div className="footer">
+            <Footer />
         </div>
         </>
     );

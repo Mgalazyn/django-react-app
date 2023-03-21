@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
 
 /* NAV - BAR */
 * {
@@ -7,9 +8,23 @@
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+background: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: darkred;
+border-radius: 100vw;
+}
+
+
 body {
     margin: 0;
-    background-color: whitesmoke;
+    background: linear-gradient(65deg, rgb(116, 0, 0) 0%, rgb(255, 255, 255) 35%, rgba(255,255,255,1) 100%);
 }
 
 .nav {
@@ -134,6 +149,7 @@ ul li {
     display: relative;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .over-pricing {
@@ -297,7 +313,7 @@ img[alt='workoutback'] {
     font-size: 14px;
     top: 25px;
     left: 335px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 img[alt='pricing-title'] {
@@ -326,3 +342,72 @@ img[alt='pricing-title'] {
     font-size: 32px;
 }
 
+/* Footer */
+
+.about-footer {
+    padding: 2rem;
+}
+
+.over-footer {
+    background-color: #ffffff;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.footer-links-div {
+    width: 150px;
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+
+.socialmedia1 img {
+    width: 10%;
+}
+
+
+.below-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+}
+
+.footer-below-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-below-links p {
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 2rem;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.footer-links-div1 h4{
+    font-size:20px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.footer-links-div1 p {
+    font-size: 15px;
+}
