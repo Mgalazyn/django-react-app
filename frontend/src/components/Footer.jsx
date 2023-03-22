@@ -14,6 +14,13 @@ function Footer() {
                     <p><a href="https://twitter.com/?lang=pl"><img src={twitterImg} alt="media"/></a></p>
                 </div>
                 <div className="footer-links-div1">
+                    <h4> Working hours </h4>
+                    <p><b>Monday - Friday</b> </p>
+                    <p>7:00am - 21:00pm </p>
+                    <p><b>Weekends </b></p>
+                    <p>10am - 20pm</p>
+                </div>
+                <div className="footer-links-div1">
                     <h4> Contact </h4>
                     <a href="/contact">
                         <p>Contact </p>
@@ -24,14 +31,6 @@ function Footer() {
                     <a href="/location">
                         <p>Location </p>
                     </a>
-                </div>
-
-                <div className="footer-links-div1">
-                    <h4> Working hours </h4>
-                    <p><b>Monday - Friday</b> </p>
-                    <p>7:00am - 21:00pm </p>
-                    <p><b>Weekends </b></p>
-                    <p>10am - 20pm</p>
                 </div>
             </div>
         </div>

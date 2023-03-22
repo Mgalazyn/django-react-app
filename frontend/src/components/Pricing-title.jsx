@@ -8,7 +8,7 @@ function PricingTitle() {
                 <img src={pricetitleImg} alt='pricing-title' />
                 <div className="text-block-title">
                     <h2>Exclusive Pricing Plan</h2>
-                    <p>Pre-order pricies before starting project, be our first customer get lower prices.
+                    <p>Pre-order prices before starting project, be our first customer get lower prices.
                         After release price can be higher.</p>
                 </div>
             </div>

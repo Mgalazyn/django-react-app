@@ -24,7 +24,6 @@ border-radius: 100vw;
 
 body {
     margin: 0;
-    background: linear-gradient(65deg, rgb(116, 0, 0) 0%, rgb(255, 255, 255) 35%, rgba(255,255,255,1) 100%);
 }
 
 .nav {
@@ -194,7 +193,7 @@ img[alt='price'] {
     font-size: 24px;
     margin-top: 10px;
     padding: 8px 15px;
-    background: rgb(255, 68, 68);
+    background: darkred;
     border-radius: 10px;
     display: inline-block;
     text-decoration: none;
@@ -346,6 +345,7 @@ img[alt='pricing-title'] {
 
 .about-footer {
     padding: 2rem;
+    margin-top: 50px;
 }
 
 .over-footer {
@@ -411,3 +411,82 @@ a {
 .footer-links-div1 p {
     font-size: 15px;
 }
+
+
+/* Login/Register */
+.over-login-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.about-login-card {
+    width: 350px;
+    height: 750px;
+    padding: 0px 50px;
+    background-color: darkred;
+}
+
+.login-card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+}
+
+.login-btn {
+    position:relative;
+    color: black;
+    outline: none;
+    margin-top: 30px;
+    font-size: 16px;
+    padding: 10px 100px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 8px 60px;
+  border: 1px solid #ccc;
+}
+
+.below-login-card a {
+    color: white;
+    font-size: 12px;
+}
+
+.below-login-card {
+    justify-content: center;
+    align-items: center;
+    padding: 10px ;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .text-container {
+    display: flex;
+    align-items: center;
+  }
