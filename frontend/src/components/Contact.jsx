@@ -1,5 +1,9 @@
+import Exercises from "./Exercises";
+
 function Contact() {
-    return (<h1>Contact</h1>)
+    return (
+        <Exercises />
+    );
 }
 
 export default Contact;

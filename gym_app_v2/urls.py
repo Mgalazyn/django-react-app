@@ -18,6 +18,9 @@ from django.urls import path, include
 from . import views
 from rest_framework import routers
 from api.views import  ExerciseViewSet, DietViewSet, PlanViewSet, ClientViewSet
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 router = routers.DefaultRouter()
 router.register('exercises', ExerciseViewSet, basename='exercise')
@@ -30,4 +33,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index, name='index'),
     path('', include(router.urls)),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -24,7 +24,7 @@ class Exercise(models.Model):
 
 class Video(models.Model):
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='videos')
-    video_file = models.FileField(upload_to='api/static/videos/')
+    video_file = models.FileField(upload_to='api/static/videos')
 
 
 class Client(models.Model):
