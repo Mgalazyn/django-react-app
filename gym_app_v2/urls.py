@@ -20,7 +20,7 @@ from rest_framework import routers
 from api.views import  ExerciseViewSet, DietViewSet, PlanViewSet, ClientViewSet
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.views.static import serve
 
 router = routers.DefaultRouter()
 router.register('exercises', ExerciseViewSet, basename='exercise')
@@ -33,4 +33,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index, name='index'),
     path('', include(router.urls)),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+
+if settings.DEBUG:
+    urlpatterns += static(
+        "api/static/videos/",
+        document_root=settings.STATICFILES_DIRS[0],
+        show_indexes=True,
+    )
+else:
+    urlpatterns += [
+        path(
+            "api/static/videos/<path:path>",
+            serve,
+            {"document_root": settings.STATICFILES_DIRS[0]},
+        )
+    ]

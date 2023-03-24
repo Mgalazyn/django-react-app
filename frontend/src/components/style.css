@@ -490,3 +490,73 @@ input[type="password"] {
     display: flex;
     align-items: center;
   }
+
+
+/* Exercises video */
+.over-exercises {
+    position: relative;
+}
+
+.about-exercises {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exercise-video {
+    width: 600px;
+    height: 300px;
+    background-color: rgba(97, 2, 2, 0.781);
+    display: flex;
+    margin-top: 10px;
+    padding: 70px 20px;
+    border-radius: 10%;
+}
+
+
+.exercise-details {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    color: white;
+}
+
+
+.add-exercise-btn {
+    position:relative;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    margin-top: 70px;
+    font-size: 18px;
+    padding: 8px 20px;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+
+}
+
+
+.add-exercise-btn::after, 
+.add-exercise-btn::before {
+    border: 3px solid black;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.add-exercise-btn:hover::after {
+    transform: translate(5px, 5px);
+  }
+  
+  .add-exercise-btn:hover::before {
+    transform: translate(-5px, -5px);
+  }
