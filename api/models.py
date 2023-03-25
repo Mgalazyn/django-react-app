@@ -20,6 +20,7 @@ class Exercise(models.Model):
     sets = models.PositiveIntegerField()
     reps = models.PositiveIntegerField()
     weight = models.CharField(max_length=255)
+    description = models.TextField(max_length=500, null=True, blank=True)
 
 
 class Video(models.Model):

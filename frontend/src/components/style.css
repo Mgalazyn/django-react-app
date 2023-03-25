@@ -494,7 +494,7 @@ input[type="password"] {
 
 /* Exercises video */
 .over-exercises {
-    position: relative;
+    display: flex;
 }
 
 .about-exercises {
@@ -502,6 +502,8 @@ input[type="password"] {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-left: 350px;
+    margin-right: 50px;
 }
 
 .exercise-video {
@@ -524,6 +526,14 @@ input[type="password"] {
     color: white;
 }
 
+.workout-list {
+    display: flex;
+    width: 500px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(97, 2, 2, 0.781);
+}
 
 .add-exercise-btn {
     position:relative;
@@ -560,3 +570,69 @@ input[type="password"] {
   .add-exercise-btn:hover::before {
     transform: translate(-5px, -5px);
   }
+
+/* CONTACT FORM */ 
+
+.over-contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-contact {
+    width: 500px;
+    height: 800px;
+    background-color: black;
+    padding: 0px 100px;
+}
+
+.about-contact h2 {
+    color: darkred;
+}
+
+.about-contact p {
+    color: white;
+}
+
+
+.contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+}
+
+
+input[type="fullname"],
+input[type="contact-email"], 
+input[type="description"]
+{
+  background-color: whitesmoke;
+  padding: 8px 60px;
+  border: 1px solid #ccc;
+}
+
+input[type="description"] {
+    width: 300px;
+    height: 300px;
+}
+
+.label {
+    color: white;
+}
+
+.under-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.contact-btn {
+    padding: 20px 50px;
+    background-color: darkred;
+    border: 3px solid black;
+    font-size: 20px;
+}

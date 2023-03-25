@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Footer from './Footer';
 
 function Exercises() {
   const [exerciseVideos, setExerciseVideos] = useState([]);
@@ -37,6 +38,7 @@ function Exercises() {
   };
 
   return (
+    <>
     <div className="over-exercises">
       {exerciseVideos.length > 0 && (
         <div className="about-exercises">
@@ -73,6 +75,8 @@ function Exercises() {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 
