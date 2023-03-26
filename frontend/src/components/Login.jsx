@@ -1,15 +1,36 @@
 import React, { useState } from "react";
 import logoImg from "./images/logo-no-background.jpg";
-import Footer from "./Footer"
+import Footer from "./Footer";
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoginMode, setIsLoginMode] = useState(true);
+  const [username, setUsername] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({ email, password });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api-auth/login/", {
+        username,
+        password,
+      });
+      if (response.data.success) {
+        // Login succeeded
+        console.log('Login succeeded');
+      } else {
+        // Login failed
+        console.log('Login failed:', response.data.error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const switchModeHandler = () => {
@@ -23,14 +44,14 @@ const Login = () => {
             <img src={logoImg} alt='logo-img' />
           </div>
           <div className="login-form">
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="email">Email: </label>
+            <form onSubmit={handleLogin}>
+              <label htmlFor="username">Email: </label>
               <input
-                type="email"
-                id="email"
+                type="username"
+                id="username"
                 placeholder="your-email@gmail.com "
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)} 
                 />
               <label htmlFor="password">Password: </label>
               <input
@@ -38,7 +59,7 @@ const Login = () => {
                 id="password"
                 placeholder="your password: "
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 />
               <center>
                 <button className="login-btn" type="submit">

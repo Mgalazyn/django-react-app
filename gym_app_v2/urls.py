@@ -17,22 +17,29 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from rest_framework import routers
-from api.views import  ExerciseViewSet, DietViewSet, PlanViewSet, ClientViewSet
+from api.views import  ExerciseViewSet, DietViewSet, PlanViewSet, ClientViewSet, UserViewSet
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView, TokenRefreshView
+)
 
 router = routers.DefaultRouter()
 router.register('exercises', ExerciseViewSet, basename='exercise')
 router.register('diet', DietViewSet, basename='diet')
 router.register('plan', PlanViewSet, basename='plan')
 router.register('client', ClientViewSet, basename='client')
+router.register('user', UserViewSet, basename='user')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index, name='index'),
     path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 
