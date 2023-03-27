@@ -31,15 +31,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES' : [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
-}
+
 
 
 INSTALLED_APPS = [
@@ -54,8 +46,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'ckeditor',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES' : [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

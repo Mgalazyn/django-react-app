@@ -9,17 +9,15 @@ const Login = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);
   const [username, setUsername] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log({ email, password });
-  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api-auth/login/", {
-        username,
+      const response = await axios.post("http://127.0.0.1:8000/login/", {
+        email,
         password,
+        username,
+
       });
       if (response.data.success) {
         // Login succeeded
@@ -45,13 +43,21 @@ const Login = () => {
           </div>
           <div className="login-form">
             <form onSubmit={handleLogin}>
-              <label htmlFor="username">Email: </label>
+              <label htmlFor="email">Email: </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="your-email@gmail.com "
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} 
+                />
+              <label htmlFor="username">Username: </label>
               <input
                 type="username"
                 id="username"
-                placeholder="your-email@gmail.com "
+                placeholder="Your username: "
                 value={username}
-                onChange={(e) => setUsername(e.target.value)} 
+                onChange={(e) => setUsername(e.target.value)}
                 />
               <label htmlFor="password">Password: </label>
               <input
@@ -61,6 +67,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
+
               <center>
                 <button className="login-btn" type="submit">
                   {isLoginMode ? "Login" : "Register"}

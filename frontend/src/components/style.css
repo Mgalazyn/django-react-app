@@ -425,7 +425,7 @@ a {
 
 .about-login-card {
     width: 350px;
-    height: 750px;
+    height: 850px;
     padding: 0px 50px;
     background-color: darkred;
 }
@@ -459,7 +459,8 @@ a {
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="username"] {
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 8px 60px;
@@ -630,6 +631,7 @@ input[type="description"] {
     justify-content: center;
     margin-top: 50px;
 }
+
 .contact-btn {
     padding: 20px 50px;
     background-color: darkred;

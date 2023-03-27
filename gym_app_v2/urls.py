@@ -24,6 +24,7 @@ from django.views.static import serve
 from rest_framework_simplejwt.views import (
     TokenObtainPairView, TokenRefreshView
 )
+from api.views import CreateUserAPIView, LoginView
 
 router = routers.DefaultRouter()
 router.register('exercises', ExerciseViewSet, basename='exercise')
@@ -38,8 +39,10 @@ urlpatterns = [
     # path('', views.index, name='index'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('users/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('users/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('create/', CreateUserAPIView.as_view(), name='create-user'),
+    path('login/', LoginView.as_view(), name='login'),
 ]
 
 
