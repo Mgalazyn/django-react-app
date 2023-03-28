@@ -8,15 +8,14 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [isLoginMode, setIsLoginMode] = useState(true);
   const [username, setUsername] = useState("");
-  // const setIsLoginMode = useState(false);
   const navigate = useNavigate();
-
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/login/", {
+      const response = await axios.post("http://127.0.0.1:8000/create/", {
         email,
         password,
         username,
@@ -24,11 +23,11 @@ const Login = () => {
       });
       if (response.data.success) {
         // Login succeeded
-        //setIsLoginMode((prevState) => !prevState);
-        navigate('/')
+        console.log('Register succeeded');
+        navigate('/Login')
       } else {
         // Login failed
-        console.log('Login failed:', response.data.error);
+        console.log('Register failed:', response.data.error);
       }
     } catch (error) {
       console.error(error);
@@ -69,18 +68,19 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
+
               <center>
                 <button className="login-btn" type="submit">
-                  Login
+                  Register
                 </button>
               </center>
             </form>
           </div>
           <div className="below-login-card">
             <h3 className="text-container">
-              <p> Don't have an account? </p>
-              <button type="button" className="text-btn" onClick={() => {navigate('/Register')}}>
-                Sign up?
+              <p> Already have an account? </p>
+              <button type="button" className="text-btn" onClick={() => {navigate('/Login')}}>
+                Login
               </button>
             </h3>
             <center><p><a href="/forget-password">Forget password?</a></p></center>

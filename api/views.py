@@ -54,7 +54,7 @@ class CreateUserAPIView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         self.create(request, *args, **kwargs)
-        return Response(status=status.HTTP_201_CREATED)
+        return Response({'success': 'User created successfully'}, status=status.HTTP_201_CREATED)
     
 
 class LoginView(APIView):
