@@ -9,7 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  // const setIsLoginMode = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
 
@@ -24,7 +24,8 @@ const Login = () => {
       });
       if (response.data.success) {
         // Login succeeded
-        //setIsLoginMode((prevState) => !prevState);
+        setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", true);
         navigate('/')
       } else {
         // Login failed
