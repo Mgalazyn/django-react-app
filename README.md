@@ -5,6 +5,10 @@ It's app created in Django-React to develop my skills as a full-stack developer.
 ## Demo
 
 
+https://user-images.githubusercontent.com/91530764/228647448-fa6ccd01-f9d5-4655-893c-bd52275a4fe7.mp4
+
+
+
 ### Installation
 Download mg_blog from github,unpack and open a folder. Then run any code interpreter,
 
