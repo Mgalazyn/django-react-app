@@ -15,7 +15,7 @@ Download mg_blog from github,unpack and open a folder. Then run any code interpr
 Clone the project
 
 ```bash
-  git clone 
+  git clone https://github.com/Mgalazyn/django-react-app.git
 ```
 
 First run this command in terminal
