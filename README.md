@@ -12,7 +12,14 @@ https://user-images.githubusercontent.com/91530764/228647448-fa6ccd01-f9d5-4655-
 ### Installation
 Download mg_blog from github,unpack and open a folder. Then run any code interpreter,
 
-first run this command in terminal
+Clone the project
+
+```bash
+  git clone 
+```
+
+First run this command in terminal
+
 ```bash
   pip install -r requirements.txt
 ```
