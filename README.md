@@ -16,7 +16,7 @@ Clone the project
 
 ```bash
   git clone https://github.com/Mgalazyn/django-react-app.git
-  cd django-react-app
+  cd gym_app_v2
 ```
 
 First run this command in terminal
